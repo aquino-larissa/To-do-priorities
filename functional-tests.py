@@ -8,13 +8,16 @@ import unittest
 class NewVsitorTest(unittest.TestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
+        browser.get("http://127.0.0.1:8000/")
     def tearDown(self):
         self.browser.quit()
 
 # Edith ouviu falar que agora a aplicação online de lista de tarefas
-
+visitorTest = NewVsitorTest()
+visitorTest.setUp()
 # aceita definir prioridades nas tarefas do tipo baixa, média e alta
-
+visitorTest = NewVsitorTest()
+visitorTest.setUp()
 # Ela decide verificar a homepage
 
 
