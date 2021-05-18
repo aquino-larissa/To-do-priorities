@@ -9,9 +9,12 @@ class NewVsitorTest(unittest.TestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
         self.browser.get("http://127.0.0.1:8000/")
-    def correctTitle(self):
+
+    def test_correct_title(self):
         self.setUp()
         assert 'To-Do' in self.browser.title
+        self.tearDown()
+
     def tearDown(self):
         self.browser.quit()
 
@@ -23,7 +26,7 @@ visitorTest = NewVsitorTest()
 #visitorTest.setUp()
 
 # Ela percebe que o título da página e o cabeçalho mencionam
-visitorTest.correctTitle()
+visitorTest.test_correct_title()
 
 # listas de tarefas com prioridade (priority to-do)
 
@@ -70,3 +73,6 @@ visitorTest.correctTitle()
 
 
 ################################# FIM ####################################
+
+if __name__ == '__main__':
+	unittest.main()
