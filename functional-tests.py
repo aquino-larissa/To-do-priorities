@@ -8,20 +8,22 @@ import unittest
 class NewVsitorTest(unittest.TestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
-        browser.get("http://127.0.0.1:8000/")
+        self.browser.get("http://127.0.0.1:8000/")
+    def correctTitle(self):
+        self.setUp()
+        assert 'To-Do' in self.browser.title
     def tearDown(self):
         self.browser.quit()
 
 # Edith ouviu falar que agora a aplicação online de lista de tarefas
-visitorTest = NewVsitorTest()
-visitorTest.setUp()
 # aceita definir prioridades nas tarefas do tipo baixa, média e alta
-visitorTest = NewVsitorTest()
-visitorTest.setUp()
-# Ela decide verificar a homepage
 
+# Ela decide verificar a homepage
+visitorTest = NewVsitorTest()
+#visitorTest.setUp()
 
 # Ela percebe que o título da página e o cabeçalho mencionam
+visitorTest.correctTitle()
 
 # listas de tarefas com prioridade (priority to-do)
 
