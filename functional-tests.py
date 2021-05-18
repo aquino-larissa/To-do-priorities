@@ -25,7 +25,11 @@ class NewVsitorTest(unittest.TestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
-            'Insira um item e a sua prioridade'
+            'Insira um item'
+        )
+        self.assertEqual(
+            inputbox.get_attribute('placeholder'),
+            'Insira a prioridade'
         )
         self.tearDown()
 
@@ -44,7 +48,8 @@ class NewVsitorTest(unittest.TestCase):
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1 - Comprar anzol - prioridade alta' for row in rows)
+            any(row.text == '1 - Comprar anzol - prioridade alta' for row in rows),
+			"New to-do item not appear in table"
         )
         self.tearDown()
 
@@ -60,16 +65,16 @@ visitorTest = NewVsitorTest()
 
 # Ela percebe que o título da página e o cabeçalho mencionam
 # listas de tarefas com prioridade (priority to-do)
-visitorTest.test_correct_title()
-visitorTest.test_find_element_by_tag_name()
+#visitorTest.test_correct_title()
+#visitorTest.test_find_element_by_tag_name()
 
 # Ela é convidada a inserir um item de tarefa e a prioridade da
 # mesma imediatamente
-visitorTest.test_find_element_by_id()
+#visitorTest.test_find_element_by_id()
 
 # Ela digita "Comprar anzol" em uma nova caixa de texto
 # e assinala prioridade alta no campo de seleção de prioridades
-visitorTest.test_typing()
+#visitorTest.test_typing()
 #visitorTest.test_select_priority()
 
 # Quando ela tecla enter, a página é atualizada, e agora
