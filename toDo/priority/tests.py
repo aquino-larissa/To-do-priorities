@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.urls import resolve
 from django.test import TestCase
+from django.http import HttpRequest
+
 from priority.views import home_page
 
 # Create your tests here.
@@ -16,4 +18,5 @@ class HomePageTest(TestCase):
 		html = response.content.decode('utf-8')
 		self.assertTrue(html.startswith('<html>'))
 		self.assertIn('<title>Priority to-do lists</title>', html)
+
 		self.assertTrue(html.endswith('</html>'))
