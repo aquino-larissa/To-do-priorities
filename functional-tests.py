@@ -26,18 +26,18 @@ visitorTest = NewVsitorTest()
 #visitorTest.setUp()
 
 # Ela percebe que o título da página e o cabeçalho mencionam
+# listas de tarefas com prioridade (priority to-do)
+
 visitorTest.test_correct_title()
 
-# listas de tarefas com prioridade (priority to-do)
+
 
 
 # Ela é convidada a inserir um item de tarefa e a prioridade da
-
 # mesma imediatamente
 
 
 # Ela digita "Comprar anzol" em uma nova caixa de texto
-
 # e assinala prioridade alta no campo de seleção de prioridades
 
 
